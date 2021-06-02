@@ -1,7 +1,7 @@
 ---
 title: TAPS Transport Discovery
 abbrev: transport-discovery
-docname: draft-duke-taps-transport-discovery-00
+docname: draft-duke-taps-transport-discovery-latest
 category: info
 ipr: trust200902
 area: Transport

@@ -284,6 +284,9 @@ This document has no IANA requirements.
 
 # Implementation Status
 
+> **RFC Editor's Note:**  Please remove this section prior to
+> publication of a final version of this document.
+
 The [Dynamic TAPS project](https://github.com/f5networks/dynamic-taps) is a
 preliminary effort to implement the concepts in this document.
 
@@ -292,3 +295,11 @@ preliminary effort to implement the concepts in this document.
 # Acknowledgments
 
 Tim Worsley contributed important ideas to this document.
+
+# Change Log
+
+> **RFC Editor's Note:**  Please remove this section prior to
+> publication of a final version of this document.
+
+## since draft-duke-taps-transport-discovery-00
+- Added output of initial implementation work

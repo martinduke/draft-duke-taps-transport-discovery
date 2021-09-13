@@ -137,9 +137,50 @@ More detailed requirements for each of these entities is below.
 # Protocol Implementation
 
 The protocol implementation must offer a dynamically linked library that
-offers certain APIs.
+offers certain APIs. TAPS SHOULD, in its documentation, provide a template for
+the format of these functions.
 
-These APIs are TBD.
+## Functions
+
+The objects below need not follow the semantics of the TAPS application API.
+In particular, a "message" is unlikely to have all the property information
+described there, instead being a more primitive buffer in which raw data is
+stored.
+
+'''
+Listener := Listen(localEndpoint)
+'''
+
+Listen opens a socket and listens on the specified address, and returns a
+handle to the resulting listener.
+
+'''
+Listener.Stop()
+'''
+
+Stop causes the listener to stop accepting connections. Subsequent events will
+return handles to the resulting connection.
+
+'''
+Connection.Send(Message)
+Connection.Receive(Message)
+'''
+
+TAPS will provide a Message object for the protocol to either send, or use to
+store incoming data.
+
+Further APIs are TBD.
+
+## Events
+
+The protocol needs to throw all the events described in the TAPS Application
+API, although the return values may not exactly conform to the same semantics.
+
+TAPS SHOULD provide an event framework that frees the protocol implementation
+from running its own thread for a polling loop. TAPS also SHOULD account for
+the possibility that the implementation may have its own polling architecture.
+If true, the protocol MUST conform to the API by translating its events into
+the signals or callbacks that TAPS expects.
 
 # Protocol Installer
 
@@ -163,6 +204,12 @@ in Section 4.2 of {{?I-D.ietf-taps-interface}}; and
 
 Of course, a de-installer should remove the appropriate registry entry.
 
+A TAPS implementation SHOULD provide a template for this registry information.
+
+One potential instantiation of this would have protocol installers write a
+file to a directory that, in a specified markup language, described the
+information above.
+
 # TAPS
 
 TAPS creates a registry for protocol implementations, which might be a
@@ -178,17 +225,30 @@ implementations of a protocol.
 TAPS SHOULD validate entries in the registry using the provided
 authentication data.
 
+One potential instaniation would start daemon that monitored the status of the
+registry. Upon any change to the registry, the daemon might:
+
+* authenticate any new entry in accordance with security policy;
+
+* verify that the required function handles are present;
+
+* run tests to verify the installation's claimed properties;
+
+* inform the user of the new protocol, requesting permission to trust it; and
+
+* write the information into shared memory for the use of Preconnections.
+
 # Security Considerations {#security}
 
 User-space installation of protocols provides enormous opportunities
 for attackers to hijack a network stack. While this has always been
-possible with arbitrary protocol implementations, with TAPS
-applications completely unaware of the installation can be victims of
-such an attack.
+possible with arbitrary protocol implementations, with TAPS applications
+completely unaware of the installation can be victims of such an attack.
 
 An implementation might advertise properties it does not actually
 provide to attract more traffic. For example, a "TLS" implementation
-might not encrypt anything at all.
+might not encrypt anything at all. A TAPS implementation MAY run tests on
+newly installed protocols to verify it provides the advertised properties.
 
 Moreover, in principle an implementation could deliver application data
 anywhere it wanted with little visibility to the application, much less
@@ -221,6 +281,11 @@ authority.
 # IANA Considerations
 
 This document has no IANA requirements.
+
+# Implementation Status
+
+The [Dynamic TAPS project](https://github.com/f5networks/dynamic-taps) is a
+preliminary effort to implement the concepts in this document.
 
 --- back
 

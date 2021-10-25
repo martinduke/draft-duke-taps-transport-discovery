@@ -1,7 +1,7 @@
 ---
 title: TAPS Transport Discovery
 abbrev: transport-discovery
-docname: draft-duke-taps-transport-discovery-latest
+docname: draft-duke-taps-transport-discovery-02
 category: info
 ipr: trust200902
 area: Transport
@@ -34,7 +34,7 @@ mechanism and an example of such a design.
 
 Discussion of this work is encouraged to happen on the TAPS IETF
 mailing list [](taps@ietf.org) or on the GitHub repository which
-contains the draft: 
+contains the draft:
 [](https://github.com/martinduke/draft-duke-taps-transport-discovery).
 
 --- middle
@@ -301,5 +301,5 @@ Tim Worsley contributed important ideas to this document.
 > **RFC Editor's Note:**  Please remove this section prior to
 > publication of a final version of this document.
 
-## since draft-duke-taps-transport-discovery-00
+## since draft-duke-taps-transport-discovery-01
 - Added output of initial implementation work

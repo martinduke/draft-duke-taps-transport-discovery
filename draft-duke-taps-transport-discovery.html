@@ -20,7 +20,7 @@ contains the draft:
  . 
     " name="description">
 <meta content="xml2rfc 3.10.0" name="generator">
-<meta content="draft-duke-taps-transport-discovery-02" name="ietf.draft">
+<meta content="draft-duke-taps-transport-discovery-latest" name="ietf.draft">
 <!-- Generator version information:
   xml2rfc 3.10.0
     Python 3.9.5
@@ -1057,7 +1057,7 @@ svg [stroke="fill"], svg [fill^="#fff"] {
 <dt class="label-workgroup">Workgroup:</dt>
 <dd class="workgroup">taps</dd>
 <dt class="label-internet-draft">Internet-Draft:</dt>
-<dd class="internet-draft">draft-duke-taps-transport-discovery-02</dd>
+<dd class="internet-draft">draft-duke-taps-transport-discovery-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
 <time datetime="2021-10-25" class="published">25 October 2021</time>
@@ -1321,20 +1321,20 @@ the format of these functions.<a href="#section-4-1" class="pilcrow">¶</a></p>
 In particular, a "message" is unlikely to have all the property information
 described there, instead being a more primitive buffer in which raw data is
 stored.<a href="#section-4.1-1" class="pilcrow">¶</a></p>
-<p id="section-4.1-2">'''
+<p id="section-4.1-2"><code>
 Listener := Listen(localEndpoint)
-'''<a href="#section-4.1-2" class="pilcrow">¶</a></p>
+</code><a href="#section-4.1-2" class="pilcrow">¶</a></p>
 <p id="section-4.1-3">Listen opens a socket and listens on the specified address, and returns a
 handle to the resulting listener.<a href="#section-4.1-3" class="pilcrow">¶</a></p>
-<p id="section-4.1-4">'''
+<p id="section-4.1-4"><code>
 Listener.Stop()
-'''<a href="#section-4.1-4" class="pilcrow">¶</a></p>
+</code><a href="#section-4.1-4" class="pilcrow">¶</a></p>
 <p id="section-4.1-5">Stop causes the listener to stop accepting connections. Subsequent events will
 return handles to the resulting connection.<a href="#section-4.1-5" class="pilcrow">¶</a></p>
-<p id="section-4.1-6">'''
+<p id="section-4.1-6"><code>
 Connection.Send(Message)
 Connection.Receive(Message)
-'''<a href="#section-4.1-6" class="pilcrow">¶</a></p>
+</code><a href="#section-4.1-6" class="pilcrow">¶</a></p>
 <p id="section-4.1-7">TAPS will provide a Message object for the protocol to either send, or use to
 store incoming data.<a href="#section-4.1-7" class="pilcrow">¶</a></p>
 <p id="section-4.1-8">Further APIs are TBD.<a href="#section-4.1-8" class="pilcrow">¶</a></p>

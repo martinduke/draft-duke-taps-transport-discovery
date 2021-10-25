@@ -9,7 +9,7 @@ Expires: 28 April 2022
 
 
                         TAPS Transport Discovery
-                 draft-duke-taps-transport-discovery-02
+               draft-duke-taps-transport-discovery-latest
 
 Abstract
 
@@ -198,17 +198,17 @@ Table of Contents
    the property information described there, instead being a more
    primitive buffer in which raw data is stored.
 
-   ''' Listener := Listen(localEndpoint) '''
+   Listener := Listen(localEndpoint)
 
    Listen opens a socket and listens on the specified address, and
    returns a handle to the resulting listener.
 
-   ''' Listener.Stop() '''
+   Listener.Stop()
 
    Stop causes the listener to stop accepting connections.  Subsequent
    events will return handles to the resulting connection.
 
-   ''' Connection.Send(Message) Connection.Receive(Message) '''
+   Connection.Send(Message) Connection.Receive(Message)
 
    TAPS will provide a Message object for the protocol to either send,
    or use to store incoming data.

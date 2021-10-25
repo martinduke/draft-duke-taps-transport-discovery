@@ -4,12 +4,12 @@
 
 taps                                                             M. Duke
 Internet-Draft                                         F5 Networks, Inc.
-Intended status: Informational                         13 September 2021
-Expires: 17 March 2022
+Intended status: Informational                           25 October 2021
+Expires: 28 April 2022
 
 
                         TAPS Transport Discovery
-               draft-duke-taps-transport-discovery-latest
+                 draft-duke-taps-transport-discovery-02
 
 Abstract
 
@@ -52,7 +52,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 17 March 2022.
+   This Internet-Draft will expire on 28 April 2022.
 
 Copyright Notice
 
@@ -84,7 +84,7 @@ Table of Contents
    10. Informative References
    Appendix A.  Acknowledgments
    Appendix B.  Change Log
-     B.1.  since draft-duke-taps-transport-discovery-00
+     B.1.  since draft-duke-taps-transport-discovery-01
    Author's Address
 
 1.  Introduction
@@ -378,7 +378,7 @@ Appendix B.  Change Log
       *RFC Editor's Note:* Please remove this section prior to
       publication of a final version of this document.
 
-B.1.  since draft-duke-taps-transport-discovery-00
+B.1.  since draft-duke-taps-transport-discovery-01
 
    *  Added output of initial implementation work
 
